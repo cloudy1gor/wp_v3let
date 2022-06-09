@@ -1,0 +1,48 @@
+/**
+ * Theme Name:  vzlet
+ * Description: Краткое описание темы...
+ * Theme URI:   https://webformyself.com
+ * Author:      Savelyev Ihor
+ * Author URI:  https://webformyself.com
+ * Text Domain: vzlet
+ * Version:     1.0
+ */
+
+.content__img img {
+  max-width: 278px;
+  min-height: 170px;
+  max-height: 170px;
+  margin-bottom: 12px;
+  object-fit: cover;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.wp-block-embed__wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.wp-block-embed__wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-width: 0;
+  outline-width: 0;
+}
