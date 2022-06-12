@@ -24,53 +24,46 @@
 
     </div>
 
-    <section class="news" data-aos="fade-up">
+    <section class="gallery">
       <div class="container">
-        <h2 class="title" data-aos="fade-up">Все статьи</h2>
-        <ul class="news__list">
+        <div class="gallery__container">
+          <h2 class="title gallery__title">Наш выпуск</h2>
+          <ul class="gallery__list">
 
-          <?php
+            <?php
 
-          $args = array(
-            'posts_per_page'      => -1,
-            'category__not_in'    => 8,
-            // 'category_name' => 'tvorchestvo',
+            $args = array(
+              'posts_per_page'      => -1,
+              // 'category__not_in'    => 8,
+              'category_name'  => 'nash-kurs',
               'post_status' => 'publish',
               'order' => 'ASC',
               'orderby' => 'date',
-          );
+            );
 
-          $query = new WP_Query( $args );
-          if( $query->have_posts() ){
-          while( $query->have_posts() ){
-          $query->the_post();
-          ?>
+            $query = new WP_Query( $args );
+            if( $query->have_posts() ){
+            while( $query->have_posts() ){
+            $query->the_post();
+            ?>
 
-          <li class="news__item">
-            <article class="news__element" data-aos="slide-up">
-              <a href="<?php the_permalink(); ?>" target="_blank" class="news__link"></a>
-
-              <?php echo vzlet_post_thumb( get_the_ID(), 'full', '', 'news__image lazy' ) ?>
-
-              <div class="news__info">
-                <h3 class="news__title"><?php the_title() ?></h3>
-                <div class="news__text">
-                  <?php $content = get_the_content(); echo wp_trim_words( get_the_content(), 180, '...' );?>
-                </div>
-                <time class="news__date"><?php the_time('j F Y') ?></time>
+            <li class="gallery__item">
+              <?php echo vzlet_post_thumb( get_the_ID(), 'full', '', 'gallery__image lazy' ) ?>
+              <div class="gallery__text">
+                <?php $content = get_the_content(); echo wp_trim_words( get_the_content(), 60, '...' );?>
               </div>
-            </article>
-          </li>
+            </li>
 
-          <?php
-	}
-	wp_reset_postdata(); // сбрасываем переменную $post
-}
-else
-	echo 'Записей нет.';
-?>
+            <?php
+              }
+              wp_reset_postdata(); // сбрасываем переменную $post
+            }
+            else
+              echo 'Записей нет.';
+            ?>
 
-        </ul>
+          </ul>
+        </div>
       </div>
     </section>
 

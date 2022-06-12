@@ -19,54 +19,45 @@
               </svg></a></li>
         </ul>
       </dvi>
-      <div class="search">
-        <form action="#" class="search__form"><input type="text" class="search__input" placeholder="Поиск"> <button
-            class="search__btn"><svg class="search__icon">
-              <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#search"></use>
-            </svg></button></form>
-      </div>
+
+      <?php get_search_form(  ) ?>
+
     </div>
 
-    <div class="row">
+    <section class="news" data-aos="fade-up">
+      <div class="container">
+        <h2 class="title" data-aos="fade-up">Поиск по запросу: <?php echo get_search_query() ?></h2>
+        <ul class="news__list">
 
-      <div class="col-12">
-        <h1>Поиск по запросу: <?php echo get_search_query() ?></h1>
-      </div>
+          <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+          <?php get_template_part( 'template-parts/content', get_post_format() ) ?>
 
-      <section class="news" data-aos="fade-up">
-        <div class="container">
-          <h2 class="title" data-aos="fade-up">Все статьи</h2>
-          <ul class="news__list">
 
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            <!-- Цикл WordPress -->
+          <li class="news__item">
+            <article class="news__element" data-aos="slide-up">
+              <a href="<?php the_permalink(); ?>" target="_blank" class="news__link"></a>
 
-            <li class="news__item">
-              <article class="news__element" data-aos="slide-up">
-                <a href="<?php the_permalink(); ?>" target="_blank" class="news__link"></a>
+              <?php echo vzlet_post_thumb( get_the_ID(), 'full', '', 'news__image lazy' ) ?>
 
-                <?php echo vzlet_post_thumb( get_the_ID(), 'full', '', 'news__image lazy' ) ?>
-
-                <div class="news__info">
-                  <h3 class="news__title"><?php the_title() ?></h3>
-                  <div class="news__text">
-                    <?php $content = get_the_content(); echo wp_trim_words( get_the_content(), 180, '...' );?>
-                  </div>
-                  <time class="news__date"><?php the_time('j F Y') ?></time>
+              <div class="news__info">
+                <h3 class="news__title"><?php the_title() ?></h3>
+                <div class="news__text">
+                  <?php $content = get_the_content(); echo wp_trim_words( get_the_content(), 180, '...' );?>
                 </div>
-              </article>
-            </li>
+                <time class="news__date"><?php the_time('j F Y') ?></time>
+              </div>
+            </article>
+          </li>
 
-            <?php endwhile;
-        else : ?>
-            <p>Записей нет.</p>
+          <?php endwhile; ?>
 
-            <?php endif; ?>
+          <?php else: ?>
+          <p>По запросу ничего не найдено...</p>
+          <?php endif; ?>
 
-          </ul>
-        </div>
-      </section>
-    </div>
+        </ul>
+      </div>
+    </section>
   </div>
 
   <div class="up-wrapper"><button class="up up--animated"><span class="up__txt">Наверх</span> <svg class="up__icon">

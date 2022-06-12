@@ -18,22 +18,25 @@
               </svg></a></li>
         </ul>
       </dvi>
-      <div class="search">
-        <form action="#" class="search__form"><input type="text" class="search__input" placeholder="Поиск"> <button
-            class="search__btn"><svg class="search__icon">
-              <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#search"></use>
-            </svg></button></form>
-      </div>
+
+      <?php get_search_form(  ) ?>
+
     </div>
     <section class="content">
-      <h2 class="title">Самое важное</h2>
+
+      <a href="<?php echo get_category_link(5); ?>">
+        <h2 class="title">Самое важное</h2>
+      </a>
       <div class="content__inner">
 
-          <?php
+        <?php
 // указываем категорию 5 и выключаем разбиение на страницы (пагинацию)
 $args = array(
 	'posts_per_page'      => 5,
   'category_name' => 'vazhnoe',
+  'post_status' => 'publish',
+  'order' => 'ASC',
+  'orderby' => 'date',
 );
 $query = new WP_Query( $args );
 if( $query->have_posts() ){
@@ -51,9 +54,14 @@ if( $query->have_posts() ){
           </div>
           <h3 class="content__title"><?php the_title(); ?></h3>
           <div class="content__text"><?php the_excerpt(); //the_content('');?></div>
-          <time class="content__date">
-            <?php the_time('j F Y'); ?>
-          </time>
+          <div class="content__info">
+            <div class="content__author">
+              <?php the_author(); ?>
+            </div>
+            <time class="content__date">
+              <?php the_time('j F Y'); ?>
+            </time>
+          </div>
         </article>
 
         <?php
@@ -64,14 +72,18 @@ else
 	echo 'Записей нет.';
 ?>
 
-      </div><button class="news__btn btn"><span>Показать все новости</span></button>
+      </div><button class="news__btn btn"><span>Показать все статьи</span></button>
     </section>
 
     <?php get_template_part( 'template-parts/content/content-image', get_post_format() ) ?>
 
     <section class="news" data-aos="fade-up">
       <div class="container">
-        <h2 class="title" data-aos="fade-up">Свежие статьи</h2>
+
+        <a href="<?php echo get_category_link(3); ?>">
+          <h2 class="title">Свежие статьи</h2>
+        </a>
+
         <ul class="news__list">
 
           <?php
@@ -79,6 +91,9 @@ else
 $args = array(
 	'posts_per_page'      => 5,
   'category__not_in'    => [8, 5],
+  'post_status' => 'publish',
+  'order' => 'ASC',
+  'orderby' => 'date',
 );
 $query = new WP_Query( $args );
 if( $query->have_posts() ){
@@ -94,10 +109,17 @@ if( $query->have_posts() ){
 
               <div class="news__info">
                 <h3 class="news__title"><?php the_title() ?></h3>
-                <div class="news__text">
+                <div class="news__text" data-aos="zoom-in-up">
                   <?php $content = get_the_content(); echo wp_trim_words( get_the_content(), 180, '...' );?>
                 </div>
-                <time class="news__date"><?php the_time('j F Y') ?></time>
+                <div class="content__info">
+                  <div class="content__author">
+                    <?php the_author(); ?>
+                  </div>
+                  <time class="content__date">
+                    <?php the_time('j F Y'); ?>
+                  </time>
+                </div>
               </div>
             </article>
           </li>
@@ -114,7 +136,7 @@ else
 
         </ul>
         <button class="news__btn btn">
-          <span>Показать все новости</span>
+          <span>Показать все статьи</span>
         </button>
       </div>
     </section>

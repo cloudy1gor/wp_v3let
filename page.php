@@ -19,12 +19,9 @@
               </svg></a></li>
         </ul>
       </dvi>
-      <div class="search">
-        <form action="#" class="search__form"><input type="text" class="search__input" placeholder="Поиск"> <button
-            class="search__btn"><svg class="search__icon">
-              <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#search"></use>
-            </svg></button></form>
-      </div>
+
+      <?php get_search_form(  ) ?>
+
     </div>
 
     <?php while ( have_posts() ) : the_post(); ?>

@@ -51,6 +51,8 @@ function vzlet_setup() {
 
 add_action( 'after_setup_theme', 'vzlet_setup' );
 
+$termlink = apply_filters( 'category_link', $termlink, $term->term_id );
+
 function vzlet_post_thumb($id, $size = 'full', $wrapper_class = '', $img_class = '') {
 $default_attr = array(
 	'src'   => $src,

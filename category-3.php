@@ -26,7 +26,7 @@
 
     <section class="news" data-aos="fade-up">
       <div class="container">
-        <h2 class="title" data-aos="fade-up">Все статьи</h2>
+        <h2 class="title" data-aos="fade-up">Творчество</h2>
         <ul class="news__list">
 
           <?php
@@ -34,10 +34,7 @@
           $args = array(
             'posts_per_page'      => -1,
             'category__not_in'    => 8,
-            // 'category_name' => 'tvorchestvo',
-              'post_status' => 'publish',
-              'order' => 'ASC',
-              'orderby' => 'date',
+            'category_name' => 'tvorchestvo',
           );
 
           $query = new WP_Query( $args );

@@ -26,7 +26,7 @@
 
     <section class="news" data-aos="fade-up">
       <div class="container">
-        <h2 class="title" data-aos="fade-up">Все статьи</h2>
+        <h2 class="title" data-aos="fade-up">Исторические хроники</h2>
         <ul class="news__list">
 
           <?php
@@ -34,10 +34,7 @@
           $args = array(
             'posts_per_page'      => -1,
             'category__not_in'    => 8,
-            // 'category_name' => 'tvorchestvo',
-              'post_status' => 'publish',
-              'order' => 'ASC',
-              'orderby' => 'date',
+            'category_name' => 'hroniki',
           );
 
           $query = new WP_Query( $args );
@@ -57,7 +54,14 @@
                 <div class="news__text">
                   <?php $content = get_the_content(); echo wp_trim_words( get_the_content(), 180, '...' );?>
                 </div>
-                <time class="news__date"><?php the_time('j F Y') ?></time>
+                <div class="content__info">
+                  <div class="content__author">
+                    <?php the_author(); ?>
+                  </div>
+                  <time class="content__date">
+                    <?php the_time('j F Y'); ?>
+                  </time>
+                </div>
               </div>
             </article>
           </li>

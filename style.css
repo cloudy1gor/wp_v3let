@@ -8,13 +8,13 @@
  * Version:     1.0
  */
 
-.content__img img {
+/* .content__img img {
   max-width: 278px;
   min-height: 170px;
   max-height: 170px;
   margin-bottom: 12px;
   object-fit: cover;
-}
+} */
 
 .bd-placeholder-img {
   font-size: 1.125rem;
@@ -46,3 +46,9 @@
   border-width: 0;
   outline-width: 0;
 }
+
+.gallery__image > .wp-post-image
+
+/* .wp-block-table{
+    margin: 0 auto!important;
+} */

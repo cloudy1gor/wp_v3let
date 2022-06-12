@@ -1,6 +1,16 @@
     <section class="slider" data-aos="fade-up">
       <div class="contaner">
-        <h2 class="title">Наши выпускники</h2>
+        <?php
+        // Получим ID категории
+        $category_id = get_cat_ID( 'Наш курс' );
+
+        // Теперь, получим УРЛ категории
+        $category_link = get_category_link( $category_id );
+      ?>
+
+        <a href="<?php echo $category_link; ?>">
+          <h2 class="title">Наш выпуск</h2>
+        </a>
       </div>
       <div class="slider__container swiper">
         <ul class="slider__list swiper-wrapper">
@@ -8,6 +18,9 @@
           <?php $args = array(
             'category_name' => 'nash-kurs',
             'posts_per_page' => 50,
+            'post_status' => 'publish',
+            'order' => 'ASC',
+            'orderby' => 'date',
         );
           $query = new WP_Query( $args );
             if( $query->have_posts() ){
@@ -16,11 +29,8 @@
 		      ?>
 
           <li class="slider__item swiper-slide">
-            <a href="<?php the_permalink(); ?>" target="_blank" class="slider__link swiper-zoom-container">
-              <!-- <img data-src="images/slider/1.jpg" src="images/1x1.png" alt="Фото" class="slider__img swiper-lazy"> -->
-              <?php echo vzlet_post_thumb( get_the_ID(), 'full', '', 'slider__img swiper-lazy' ) ?>
-              <div class="swiper-lazy-preloader"></div>
-            </a>
+            <?php echo vzlet_post_thumb( get_the_ID(), 'full', '', 'slider__img swiper-lazy' ) ?>
+            <div class="swiper-lazy-preloader"></div>
           </li>
 
           <?php
