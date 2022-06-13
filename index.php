@@ -2,7 +2,7 @@
 
 <main class="main" data-aos="slide-up">
   <div class="container">
-    <div class="bar">
+    <div class="bar" data-aos="zoom-out">
       <dvi class="social">
         <ul class="social__list">
           <li class="social__item"><a href="https://ok.ru/profile/529378520930" target="_blank"
@@ -89,7 +89,7 @@ else
           <?php
 // указываем категорию 5 и выключаем разбиение на страницы (пагинацию)
 $args = array(
-	'posts_per_page'      => 5,
+	'posts_per_page'      => 9,
   'category__not_in'    => [8, 5],
   'post_status' => 'publish',
   'order' => 'ASC',
@@ -121,6 +121,8 @@ if( $query->have_posts() ){
                   </time>
                 </div>
               </div>
+
+
             </article>
           </li>
 

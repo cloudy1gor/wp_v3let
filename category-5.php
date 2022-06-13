@@ -3,7 +3,7 @@
 <main class="main">
   <div class="container">
 
-    <div class="bar">
+    <div class="bar" data-aos="zoom-out">
       <dvi class="social">
         <ul class="social__list">
           <li class="social__item"><a href="https://ok.ru/profile/529378520930" target="_blank"
@@ -55,7 +55,14 @@
                 <div class="news__text">
                   <?php $content = get_the_content(); echo wp_trim_words( get_the_content(), 180, '...' );?>
                 </div>
-                <time class="news__date"><?php the_time('j F Y') ?></time>
+                <div class="content__info">
+                  <div class="content__author">
+                    <?php the_author(); ?>
+                  </div>
+                  <time class="content__date">
+                    <?php the_time('j F Y'); ?>
+                  </time>
+                </div>
               </div>
             </article>
           </li>

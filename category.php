@@ -3,7 +3,7 @@
 <main class="main">
   <div class="container">
 
-    <div class="bar">
+    <div class="bar" data-aos="zoom-out">
       <dvi class="social">
         <ul class="social__list">
           <li class="social__item"><a href="https://ok.ru/profile/529378520930" target="_blank"

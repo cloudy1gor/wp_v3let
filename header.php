@@ -2,7 +2,8 @@
 <html <?php language_attributes()?>>
 
 <head>
-  <title><?php document_title_filter($title); ?></title>
+  <!-- <title><?php document_title_filter($title); ?></title> -->
+  <title><?php wp_title('|'); ?></title>
   <meta name="robots" content="index, follow">
   <meta name="keywords"
     content="ХВВАУЛ,Харьковское ВВАУЛ,Харьковское высшее военное авиационное училище лётчиков,выпускники 1974 года,выпуск 1974 года, лучший сайт авиации">

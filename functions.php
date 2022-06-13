@@ -46,7 +46,7 @@ function vzlet_setup() {
     'header_menu' => 'Меню в шапке',
 		// 'footer_menu' => 'Меню в подвале'
     ] );
-    // add_theme_support( 'title-tag' );
+    add_theme_support( 'title-tag' );
   }
 
 add_action( 'after_setup_theme', 'vzlet_setup' );
@@ -78,4 +78,26 @@ function vzlet_get_media( $types = array() ) {
 	$items = get_media_embedded_in_content( $content, $types );
 	return $items[0] ?? $items;
 }
+
+// Ограничение ревизий записи
+if( ! defined( 'WP_POST_REVISIONS' ) ){
+	define( 'WP_POST_REVISIONS', 3 );
+}
+
+## Полное Удаление версии WP
+## Также нужно удалить файл readme.html в корне сайта
+remove_action('wp_head', 'wp_generator'); // из заголовка
+add_filter('the_generator', '__return_empty_string'); // из фидов и URL
+
+// Отключим выводи ошибок на странице авторизации
+add_filter('login_errors', 'login_obscure_func');
+function login_obscure_func(){
+	return 'Ошибка: вы ввели неправильный логин или пароль.';
+}
+
+## Отключим возможность редактировать файлы в админке для тем, плагинов
+define('DISALLOW_FILE_EDIT', true);
+
+## закроем возможность публикации через xmlrpc.php
+add_filter('xmlrpc_enabled', '__return_false');
 
