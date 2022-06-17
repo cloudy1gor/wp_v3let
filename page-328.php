@@ -32,7 +32,7 @@
             class="author__img" />
 
           <div class="author__body">
-            <h2 class="author__name">Федоров Юрий Игоревич</h2>
+            <h2 class="author__name">Фёдоров Юрий Игоревич</h2>
             <span class="author__year">(1953 года рождения)</span>
 
             <blockquote class="author__block" cite="http://developer.mozilla.org">
@@ -51,7 +51,9 @@
           </div>
         </div>
 
-        <h2 class="author__title title">Произведения</h2>
+        <h2 class="author__title title" data-aos="fade-up">Произведения</h2>
+        <h3 class="author__subtitle" data-aos="fade-up">Зарницы памяти. Записки курсанта летного училища.</h3>
+
 
         <ol class="author__content" reversed data-aos="fade-up" data-aos-duration="1200">
 
@@ -60,7 +62,10 @@
           $args = array(
             'posts_per_page'      => -1,
             'category__not_in'    => 8,
-            'category_name' => 'zarniczy-pamyati',          );
+            'category_name' => 'zarniczy-pamyati',
+            'order' => 'ASC',
+            'orderby' => 'date',
+                 );
 
           $query = new WP_Query( $args );
           if( $query->have_posts() ){

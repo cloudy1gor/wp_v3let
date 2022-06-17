@@ -17,11 +17,6 @@
 						echo vzlet_get_human_time();
 						?>
         </small>
-        <small>
-          <?php
-						the_tags();
-						?>
-        </small>
         <small>Категории:
           <?php
 						the_category( ', ' );
@@ -29,3 +24,9 @@
         </small>
       </div>
     </article>
+
+
+    <div class="product__content">
+      <?php comments_template(); ?>
+
+    </div>

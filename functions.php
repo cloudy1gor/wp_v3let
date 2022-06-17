@@ -40,6 +40,8 @@ function vzlet_get_human_time() {
 }
 
 function vzlet_setup() {
+  	// Add default posts and comments RSS feed links to head.
+	add_theme_support( 'automatic-feed-links' );
   add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'post-formats', array('image') );
   register_nav_menus( [
@@ -47,11 +49,28 @@ function vzlet_setup() {
 		// 'footer_menu' => 'Меню в подвале'
     ] );
     add_theme_support( 'title-tag' );
+
+    /*
+		* Switch default core markup for search form, comment form, and comments
+		* to output valid HTML5.
+		*/
+	add_theme_support(
+		'html5',
+		array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+			'style',
+			'script',
+		)
+	);
   }
 
 add_action( 'after_setup_theme', 'vzlet_setup' );
 
-$termlink = apply_filters( 'category_link', $termlink, $term->term_id );
+// $termlink = apply_filters( 'category_link', $termlink, $term->term_id );
 
 function vzlet_post_thumb($id, $size = 'full', $wrapper_class = '', $img_class = '') {
 $default_attr = array(
@@ -101,3 +120,11 @@ define('DISALLOW_FILE_EDIT', true);
 ## закроем возможность публикации через xmlrpc.php
 add_filter('xmlrpc_enabled', '__return_false');
 
+remove_filter ('the_content', 'wpautop');
+
+// отключение уведомлений об обновлении
+if( ! current_user_can( 'edit_users' ) ){
+	add_filter( 'auto_update_core', '__return_false' );   // обновление ядра
+
+	add_filter( 'pre_site_transient_update_core', '__return_null' );
+}
