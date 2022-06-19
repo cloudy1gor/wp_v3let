@@ -72,7 +72,20 @@ else
 	echo 'Записей нет.';
 ?>
 
-      </div><button class="news__btn btn"><span>Показать все статьи</span></button>
+      </div>
+
+      <?php
+      // Получим ID категории
+      $category_id = get_cat_ID( 'Важное' );
+
+      // Теперь, получим УРЛ категории
+      $category_link = get_category_link( $category_id );
+      ?>
+
+      <!-- выведем ссылку на категорию -->
+      <a href="<?php echo $category_link; ?>" class="news__btn btn"><span>Показать все статьи</span></a>
+
+
     </section>
 
     <?php get_template_part( 'template-parts/content/content-image', get_post_format() ) ?>
@@ -94,6 +107,7 @@ $args = array(
   'post_status' => 'publish',
   'order' => 'ASC',
   'orderby' => 'date',
+  'suppress_filters' => true,
 );
 $query = new WP_Query( $args );
 if( $query->have_posts() ){
@@ -137,9 +151,18 @@ else
 
 
         </ul>
-        <button class="news__btn btn">
-          <span>Показать все статьи</span>
-        </button>
+
+      <?php
+      // Получим ID категории
+      $category_id = get_cat_ID( 'Творчество' );
+
+      // Теперь, получим УРЛ категории
+      $category_link = get_category_link( $category_id );
+      ?>
+
+      <!-- выведем ссылку на категорию -->
+      <a href="<?php echo $category_link; ?>" class="news__btn btn"><span>Показать все статьи</span></a>
+
       </div>
     </section>
     <div class="up-wrapper">

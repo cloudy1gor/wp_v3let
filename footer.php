@@ -15,7 +15,7 @@
     <div class="footer__inner">
       <ol class="footer__txt">
         <li class="footer__copy">Взлет® - лучший сайт об авиации.</li>
-        <li class="footer__copy">© Все права защищены 2007-2022г.</li>
+        <li class="footer__copy">&copy Все права защищены 2007-<?php echo date("Y"); ?>г.</li>
       </ol>
       <dvi class="social">
         <ul class="social__list">
