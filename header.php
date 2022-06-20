@@ -34,7 +34,8 @@
       <div class="container">
         <div class="header__inner">
           <div class="header__about" data-aos="fade-left" data-aos-duration="1000">
-            <h1 class="header__title"><a href="<?php echo home_url( '/' ) ?>" class="header__link"><?php bloginfo( 'name' )?></a></h1>
+            <h1 class="header__title"><a href="<?php echo home_url( '/' ) ?>"
+                class="header__link"><?php bloginfo( 'name' )?></a></h1>
             <span class="header__subtitle">Сайт
               выпускников 1974 года</span>
           </div>

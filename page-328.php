@@ -52,20 +52,27 @@
         </div>
 
         <h2 class="author__title title" data-aos="fade-up">Произведения</h2>
+        <ol class="author__content" reversed data-aos="fade-up" data-aos-duration="1200">
 
-        <div class="acor-container" data-aos="fade-up" data-aos-duration="1200">
-          <input type="radio" name="acor" id="acor1" checked="checked" />
-          <label for="acor1">
-            <h3 class="author__subtitle">Зарницы памяти. Записки курсанта летного училища.</h3>
-          </label>
-          <div class="acor-body">
-            <ol class="author__content" reversed>
-              <?php
+        <?php
+      // Получим ID категории
+      $category_id = get_cat_ID( 'Зарницы памяти' );
+
+      // Теперь, получим УРЛ категории
+      $category_link = get_category_link( $category_id );
+      ?>
+
+          <li class="author__item">
+            <a href="<?php echo $category_link; ?>" class="author__link">Зарницы памяти. Записки курсанта лётного училища.</a>
+          </li>
+
+          <?php
 
               $args = array(
                 'posts_per_page'      => -1,
-                'category__not_in'    => 8,
-                'category_name' => 'zarniczy-pamyati',
+                'category__not_in'    => [8,7],
+                // 'category_name' => 'tvorchestvo',
+                'author_name'=> 'Fedorov',
                 'order' => 'ASC',
                 'orderby' => 'date',
                 'suppress_filters' => true,
@@ -78,36 +85,19 @@
               $query->the_post();
               ?>
 
-              <li class="author__item">
-                <a href="<?php the_permalink(); ?>" class="author__link"><?php the_title() ?></a>
-              </li>
+          <li class="author__item">
+            <a href="<?php the_permalink(); ?>" class="author__link"><?php the_title() ?></a>
+          </li>
 
-              <?php
+          <?php
             }
             wp_reset_postdata(); // сбрасываем переменную $post
           }
           else
             echo 'Записей нет.';
           ?>
-            </ol>
-          </div>
 
-          <input type="radio" name="acor" id="acor2" />
-          <label for="acor2">Заголовок вкладки</label>
-          <div class="acor-body">
-            <p>Описание вкладки</p>
-          </div>
-
-          <input type="radio" name="acor" id="acor3" />
-          <label for="acor3">Заголовок вкладки</label>
-          <div class="acor-body">
-            <p>Описание вкладки</p>
-          </div>
-        </div>
-
-
-
-
+        </ol>
       </div>
     </section>
 

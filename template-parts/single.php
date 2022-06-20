@@ -10,8 +10,15 @@
 
       <div class="product__info">
         <small>
-          Автор поста: <?php the_author(); ?>
+          Автор: <?php the_author(); ?>
         </small>
+        <small>
+          Просмотров: <?php echo get_post_meta( $post->ID, 'views', true ); ?>
+        </small>
+        <!-- <small>
+          Просмотров: <?php //setPostViews(get_the_ID()); ?>
+          <?php //echo getPostViews(get_the_ID()); ?>
+        </small> -->
         <small>
           <?php
 						echo vzlet_get_human_time();
@@ -26,7 +33,7 @@
     </article>
 
 
-    <div class="product__content">
+    <div class="comments" data-aos="slide-up" data-aos-duration="1000">
       <?php comments_template(); ?>
 
     </div>
