@@ -54,7 +54,7 @@
         <h2 class="author__title title" data-aos="fade-up">Произведения</h2>
         <ol class="author__content" reversed data-aos="fade-up" data-aos-duration="1200">
 
-        <?php
+          <?php
       // Получим ID категории
       $category_id = get_cat_ID( 'Зарницы памяти' );
 
@@ -62,9 +62,17 @@
       $category_link = get_category_link( $category_id );
       ?>
 
+          <h3 class="author__title">Книги</h3>
           <li class="author__item">
-            <a href="<?php echo $category_link; ?>" class="author__link">Зарницы памяти. Записки курсанта лётного училища.</a>
+            <a href="<?php echo $category_link; ?>" class="author__link">Зарницы памяти. Записки курсанта лётного
+              училища.</a>
+
+            <small>
+              Опубликовано: <?php the_time('j F Y'); ?>
+            </small>
           </li>
+
+          <h3 class="author__title">Статьи</h3>
 
           <?php
 
@@ -87,6 +95,9 @@
 
           <li class="author__item">
             <a href="<?php the_permalink(); ?>" class="author__link"><?php the_title() ?></a>
+            <small>
+              Опубликовано: <?php the_time('j F Y'); ?>
+            </small>
           </li>
 
           <?php
