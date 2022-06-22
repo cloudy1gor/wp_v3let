@@ -35,6 +35,10 @@
             'posts_per_page'      => -1,
             'category__not_in'    => 8,
             'category_name' => 'hroniki',
+            'order' => 'ASC',
+            'orderby' => 'date',
+            'suppress_filters' => true,
+            'ignore_custom_sort' => true,
           );
 
           $query = new WP_Query( $args );
