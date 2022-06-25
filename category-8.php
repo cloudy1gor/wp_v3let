@@ -39,6 +39,8 @@
               'post_status' => 'publish',
               'order' => 'ASC',
               'orderby' => 'date',
+              // 'suppress_filters' => true,
+              // 'ignore_custom_sort' => true,
             );
 
             $query = new WP_Query( $args );
@@ -63,6 +65,11 @@
             ?>
 
           </ul>
+
+          <div id="modalWindow">
+            <div id="modalClose">&times;</div>
+            <div id="modalPic"></div>
+          </div>
         </div>
       </div>
     </section>

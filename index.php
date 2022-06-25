@@ -32,10 +32,11 @@
         <?php
 // указываем категорию 5 и выключаем разбиение на страницы (пагинацию)
 $args = array(
+  'suppress_filters' => true,
 	'posts_per_page'      => 5,
   'category_name' => 'vazhnoe',
   'post_status' => 'publish',
-  'order' => 'ASC',
+  'order' => 'DESC',
   'orderby' => 'date',
 );
 $query = new WP_Query( $args );
@@ -108,6 +109,7 @@ $args = array(
   'order' => 'ASC',
   'orderby' => 'date',
   'suppress_filters' => true,
+  'ignore_sticky_posts' => 1
 );
 $query = new WP_Query( $args );
 if( $query->have_posts() ){
@@ -152,7 +154,7 @@ else
 
         </ul>
 
-      <?php
+        <?php
       // Получим ID категории
       $category_id = get_cat_ID( 'Творчество' );
 
@@ -160,8 +162,8 @@ else
       $category_link = get_category_link( $category_id );
       ?>
 
-      <!-- выведем ссылку на категорию -->
-      <a href="<?php echo $category_link; ?>" class="news__btn btn"><span>Показать все статьи</span></a>
+        <!-- выведем ссылку на категорию -->
+        <a href="<?php echo $category_link; ?>" class="news__btn btn"><span>Показать все статьи</span></a>
 
       </div>
     </section>

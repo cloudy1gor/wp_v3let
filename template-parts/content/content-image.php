@@ -12,11 +12,11 @@
           <h2 class="title">Наш выпуск</h2>
         </a>
       </div>
-      <div class="itcss">
-        <div class="slider__container itcss__wrapper">
-          <ul data-simple-slider class="slider__list itcss__items">
 
-            <?php $args = array(
+      <div class="slider__container">
+        <ul data-simple-slider class="slider__list itcss__items">
+
+          <?php $args = array(
             'category_name' => 'nash-kurs',
             'posts_per_page' => -1,
             'post_status' => 'publish',
@@ -29,11 +29,11 @@
               $query->the_post();
               ?>
 
-            <li class="slider__item itcss__item">
-              <?php echo vzlet_post_thumb( get_the_ID(), 'full', '', 'slider__img lazy' ) ?>
-            </li>
+          <li class="slider__item">
+            <?php echo vzlet_post_thumb( get_the_ID(), 'full', '', 'slider__img lazy' ) ?>
+          </li>
 
-            <?php
+          <?php
 	}
 	      wp_reset_postdata(); // сбрасываем переменную $post
         }
@@ -42,9 +42,9 @@
         ?>
 
 
-          </ul>
-        </div>
+        </ul>
       </div>
+
 
 
 
