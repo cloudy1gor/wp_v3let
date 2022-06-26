@@ -26,7 +26,7 @@
 
     <section class="news" data-aos="fade-up">
       <div class="container">
-        <h2 class="title" data-aos="fade-up">Поиск по запросу: <?php echo get_search_query() ?></h2>
+        <h2 class="title search__title" data-aos="fade-up">Поиск по запросу: <?php echo get_search_query() ?></h2>
         <ul class="news__list">
 
           <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

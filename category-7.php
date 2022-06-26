@@ -37,8 +37,8 @@
             'category_name' => 'zarniczy-pamyati',
             'order' => 'ASC',
             'orderby' => 'date',
-            'suppress_filters' => true,
-            'ignore_custom_sort' => true,
+            // 'suppress_filters' => true,
+            // 'ignore_custom_sort' => true,
           );
 
           $query = new WP_Query( $args );
