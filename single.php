@@ -37,7 +37,7 @@
   </section>
 
       <div class="up-wrapper">
-      <button class="up up--animated"><span class="up__txt">Наверх</span>
+      <button class="up"><span class="up__txt">Наверх</span>
         <svg class="up__icon">
           <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#up"></use>
         </svg>

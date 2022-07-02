@@ -49,7 +49,7 @@
             $query->the_post();
             ?>
 
-            <li class="gallery__item" data-aos="zoom-out-up">
+            <li class="gallery__item">
               <?php echo vzlet_post_thumb( get_the_ID(), 'full', '', 'gallery__image lazy' ) ?>
               <div class="gallery__text">
                 <?php $content = get_the_content(); echo wp_trim_words( get_the_content(), 60, '...' );?>
@@ -66,21 +66,22 @@
 
           </ul>
 
-          <div id="modalWindow">
-            <div id="modalClose">&times;</div>
-            <div id="modalPic"></div>
-          </div>
         </div>
       </div>
     </section>
 
   </div>
 
-  <div class="up-wrapper"><button class="up up--animated"><span class="up__txt">Наверх</span> <svg class="up__icon">
-        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#up"></use>
-      </svg></button></div>
+  <div id="modalWindow">
+    <div id="modalClose">&times;</div>
+    <div id="modalPic"></div>
   </div>
+
 </main>
+<div class="up-wrapper"><button class="up"><span class="up__txt">Наверх</span> <svg class="up__icon">
+      <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#up"></use>
+    </svg></button></div>
+</div>
 
 <?php get_footer() ?>
 

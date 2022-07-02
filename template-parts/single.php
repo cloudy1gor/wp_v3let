@@ -1,6 +1,6 @@
     <article class="product__wrapper" data-aos="slide-up" data-aos-duration="1000">
       <div class="product__content">
-        <h2 class="product__title"><?php the_title(); ?></h2>
+        <h4 class="product__title"><?php the_title(); ?></h4>
         <div class="product__text">
           <!-- <img src="/images/content/2.jpg" alt="Изображение" class="product__img" data-aos="fade-in" data-aos-duration="1000"> -->
           <?php // echo vzlet_post_thumb( get_the_ID(), 'full', '', 'product__img' ) ?>
@@ -16,8 +16,9 @@
           Просмотров: <?php echo get_post_meta( $post->ID, 'views', true ); ?>
         </small>
         <!-- <small>
-          Просмотров: <?php //setPostViews(get_the_ID()); ?>
-          <?php //echo getPostViews(get_the_ID()); ?>
+          <?php
+							//the_tags();
+            ?>
         </small> -->
         <small>
           <?php
