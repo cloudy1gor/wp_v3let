@@ -23,8 +23,10 @@
 
       <div class="modal__text">
         <p>
-          Если что-то не получилось открыть, если у Вас есть хороший материал или интересные фото для публикации, информация для наших читателей, если появились вопросы, пишите
-          нам на адресса электроной почты, указаные ниже. Здесь Вы получите ответ на Ваши вопросы и будет рассмотрена Ваша
+          Если что-то не получилось открыть, если у Вас есть хороший материал или интересные фото для публикации,
+          информация для наших читателей, если появились вопросы, пишите
+          нам на адресса электроной почты, указаные ниже. Здесь Вы получите ответ на Ваши вопросы и будет рассмотрена
+          Ваша
           информация!
         </p>
         <br />
@@ -82,6 +84,49 @@
 </div>
 
 <?php wp_footer() ?>
+<script>
+// document.addEventListener("DOMContentLoaded", () => {
+
+const currentTheme = localStorage.getItem("theme");
+
+if (currentTheme == "dark") {
+  document.body.classList.toggle("dark-mode");
+} else if (currentTheme == "light") {
+  document.body.classList.toggle("light-mode");
+}
+
+const btn = document.querySelector(".btn-toggle");
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+let changeThemeButtons = document.querySelectorAll(".theme__icon");
+
+changeThemeButtons.forEach((button) => {
+  button.addEventListener("click", function() {
+    let theme = this.dataset.theme;
+    applyTheme(theme);
+  });
+});
+
+function applyTheme(themeName) {
+  changeThemeButtons.forEach((button) => {
+    button.style.display = "block";
+  });
+  document.querySelector(`[data-theme="${themeName}"]`).style.display =
+    "none";
+}
+
+btn.addEventListener("click", function() {
+  if (prefersDarkScheme.matches) {
+    document.body.classList.toggle("light-mode");
+    var theme = document.body.classList.contains("light-mode") ? "light" : "dark";
+  } else {
+    document.body.classList.toggle("dark-mode");
+    var theme = document.body.classList.contains("dark-mode") ? "dark" : "light";
+  }
+  document.cookie = "theme=" + theme;
+});
+
+// });
+</script>
 </body>
 
 </html>

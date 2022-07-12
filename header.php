@@ -14,15 +14,30 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link type="image/x-icon" rel="shortcut icon"
     href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico">
-  <meta property="og:title" content="ХВВАУЛ,Харьковское ВВАУЛ,Харьковское высшее военное авиационное училище лётчиков,выпускники 1974 года,выпуск 1974 года, лучший сайт авиации">
-  <meta property="og:description" content="Сайт выпускников ХВВАУЛ 1974 года выпуска, ХВВАУЛ-74, Взлёт.ру, v3let.ru, лучший сайт авиации">
+  <meta property="og:title"
+    content="ХВВАУЛ,Харьковское ВВАУЛ,Харьковское высшее военное авиационное училище лётчиков,выпускники 1974 года,выпуск 1974 года, лучший сайт авиации">
+  <meta property="og:description"
+    content="Сайт выпускников ХВВАУЛ 1974 года выпуска, ХВВАУЛ-74, Взлёт.ру, v3let.ru, лучший сайт авиации">
   <meta property="og:image" content="http://192.168.0.109/assets/images/meta.jpg">
   <meta property="og:url" content="http://v3let.ru/">
 
   <?php wp_head() ?>
 </head>
 
-<body <?php body_class(); ?>>
+<?php
+$themeClass = '';
+if (!empty($_COOKIE['theme'])) {
+  if ($_COOKIE['theme'] == 'dark') {
+    $themeClass = 'dark-theme';
+  } else if ($_COOKIE['theme'] == 'light') {
+    $themeClass = 'light-theme';
+  }
+}
+?>
+
+<!-- <body <?php //body_class(); ?>> -->
+
+<body class="<?php echo $themeClass; ?>">
 
   <div class="wrapper">
     <header class="header">
