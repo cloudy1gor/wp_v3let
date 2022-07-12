@@ -85,22 +85,12 @@
 
 <?php wp_footer() ?>
 <script>
-// document.addEventListener("DOMContentLoaded", () => {
-
-const currentTheme = localStorage.getItem("theme");
-
-if (currentTheme == "dark") {
-  document.body.classList.toggle("dark-mode");
-} else if (currentTheme == "light") {
-  document.body.classList.toggle("light-mode");
-}
-
 const btn = document.querySelector(".btn-toggle");
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 let changeThemeButtons = document.querySelectorAll(".theme__icon");
 
 changeThemeButtons.forEach((button) => {
-  button.addEventListener("click", function() {
+  button.addEventListener("click", function () {
     let theme = this.dataset.theme;
     applyTheme(theme);
   });
@@ -110,11 +100,18 @@ function applyTheme(themeName) {
   changeThemeButtons.forEach((button) => {
     button.style.display = "block";
   });
-  document.querySelector(`[data-theme="${themeName}"]`).style.display =
-    "none";
+  document.querySelector(`[data-theme="${themeName}"]`).style.display = "none";
 }
 
-btn.addEventListener("click", function() {
+const currentTheme = localStorage.getItem("theme");
+
+if (currentTheme == "dark") {
+  document.body.classList.toggle("dark-mode");
+} else if (currentTheme == "light") {
+  document.body.classList.toggle("light-mode");
+}
+
+btn.addEventListener("click", function () {
   if (prefersDarkScheme.matches) {
     document.body.classList.toggle("light-mode");
     var theme = document.body.classList.contains("light-mode") ? "light" : "dark";
@@ -122,10 +119,8 @@ btn.addEventListener("click", function() {
     document.body.classList.toggle("dark-mode");
     var theme = document.body.classList.contains("dark-mode") ? "dark" : "light";
   }
-  document.cookie = "theme=" + theme;
+  localStorage.setItem("theme", theme);
 });
-
-// });
 </script>
 </body>
 

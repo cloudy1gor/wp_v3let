@@ -24,20 +24,7 @@
   <?php wp_head() ?>
 </head>
 
-<?php
-$themeClass = '';
-if (!empty($_COOKIE['theme'])) {
-  if ($_COOKIE['theme'] == 'dark') {
-    $themeClass = 'dark-theme';
-  } else if ($_COOKIE['theme'] == 'light') {
-    $themeClass = 'light-theme';
-  }
-}
-?>
-
-<!-- <body <?php //body_class(); ?>> -->
-
-<body class="<?php echo $themeClass; ?>">
+<body <?php body_class(); ?>>
 
   <div class="wrapper">
     <header class="header">
