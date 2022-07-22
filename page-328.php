@@ -72,7 +72,7 @@
             </small>
           </li>
 
-          <h3 class="author__title">Статьи</h3>
+          <h3 class="author__title">Эссе</h3>
 
           <?php
 
