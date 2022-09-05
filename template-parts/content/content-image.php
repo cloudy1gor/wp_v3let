@@ -33,12 +33,12 @@
             <div class="embla__slide slider__item">
               <div class="embla__slide__inner">
                 <?php
-        // Получим ID категории
-        $category_id = get_cat_ID( 'Наш курс' );
+                  // Получим ID категории
+                  $category_id = get_cat_ID( 'Наш курс' );
 
-        // Теперь, получим УРЛ категории
-        $category_link = get_category_link( $category_id );
-        ?>
+                  // Теперь, получим УРЛ категории
+                  $category_link = get_category_link( $category_id );
+                ?>
 
                 <!-- выведем ссылку на категорию -->
                 <a href="<?php echo $category_link; ?>" class="news__link btn"><span></span></a>

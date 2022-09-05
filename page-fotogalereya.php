@@ -30,10 +30,50 @@
           <ul class="albums__list">
 
             <li class="albums__item">
-              <div class="albums__img-container">
-                <img src="https://picsum.photos/400/300?grayscale" alt="image" class="albums__img" />
-                <img src="https://picsum.photos/400/300?grayscale" alt="image" class="albums__img--second" />
+              <div class="embla albums__slides">
+                <div class="embla__viewport albums__viewport">
+                  <div class="albums__img-container embla__container">
+
+                    <?php $args = array(
+                      'category_name' => 'nash-kurs',
+                      'posts_per_page' => -1,
+                      'post_status' => 'publish',
+                      'order' => 'ASC',
+                      'orderby' => 'date',
+                    );
+                    $query = new WP_Query( $args );
+                    if( $query->have_posts() ){
+                      while( $query->have_posts() ){
+                        $query->the_post();
+                        ?>
+
+                    <div class="albums__slide embla__slide">
+                      <div class="embla__slide__inner">
+                        <?php
+                          // Получим ID категории
+                          $category_id = get_cat_ID( 'Наш курс' );
+
+                          // Теперь, получим УРЛ категории
+                          $category_link = get_category_link( $category_id );
+                        ?>
+
+                        <!-- выведем ссылку на категорию -->
+                        <a href="<?php echo $category_link; ?>" class="news__link btn"><span></span></a>
+                        <?php echo vzlet_post_thumb( get_the_ID(), 'full', '', 'albums__img lazy' ) ?>
+                      </div>
+                    </div>
+                    <?php
+	                  }
+                      wp_reset_postdata(); // сбрасываем переменную $post
+                    }
+                      else
+                        echo 'Записей нет.';
+                    ?>
+
+                  </div>
+                </div>
               </div>
+
               <h3 class="albums__name">Наш выпуск</h3>
               <?php
               // Получим ID категории
@@ -49,7 +89,7 @@
               <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/segodna.jpg" alt="image"
                 class="albums__img" />
               <h3 class="albums__name">Мы сегодня</h3>
-                            <?php
+              <?php
               // Получим ID категории
               $category_id = get_cat_ID( 'Мы сегодня' );
 
@@ -63,7 +103,7 @@
               <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/vchera.jpg" alt="image"
                 class="albums__img" />
               <h3 class="albums__name">Мы вчера</h3>
-                            <?php
+              <?php
               // Получим ID категории
               $category_id = get_cat_ID( 'Мы вчера' );
 
@@ -77,7 +117,7 @@
               <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/vstrechi.jpg" alt="image"
                 class="albums__img" />
               <h3 class="albums__name">Встречи и юбилеи</h3>
-                            <?php
+              <?php
               // Получим ID категории
               $category_id = get_cat_ID( 'Встречи и юбилеи' );
 
@@ -91,7 +131,7 @@
               <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/hist.jpg" alt="image"
                 class="albums__img" />
               <h3 class="albums__name">История ХВВАУЛ в фотографиях</h3>
-                            <?php
+              <?php
               // Получим ID категории
               $category_id = get_cat_ID( 'История ХВВАУЛ в фотографиях' );
 
