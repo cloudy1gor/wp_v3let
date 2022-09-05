@@ -2,16 +2,28 @@
 
 <main class="main">
   <div class="container">
+
     <?php get_template_part( 'template-parts/content/content-bar', get_post_format() ) ?>
+
 
     <section class="news" data-aos="fade-up">
       <div class="container">
-        <h2 class="title search__title" data-aos="fade-up">Поиск по запросу: <?php echo get_search_query() ?></h2>
+        <h2 class="title" data-aos="fade-up">Творчество</h2>
         <ul class="news__list">
 
-          <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-          <?php get_template_part( 'template-parts/content', get_post_format() ) ?>
+          <?php
 
+          $args = array(
+            'posts_per_page'      => -1,
+            'category__not_in'    => 8,
+            'category_name' => 'tvorchestvo',
+          );
+
+          $query = new WP_Query( $args );
+          if( $query->have_posts() ){
+          while( $query->have_posts() ){
+          $query->the_post();
+          ?>
 
           <li class="news__item">
             <article class="news__element" data-aos="slide-up">
@@ -36,15 +48,18 @@
             </article>
           </li>
 
-          <?php endwhile; ?>
-
-          <?php else: ?>
-          <p>По запросу ничего не найдено...</p>
-          <?php endif; ?>
+          <?php
+	}
+	wp_reset_postdata(); // сбрасываем переменную $post
+}
+else
+	echo 'Записей нет.';
+?>
 
         </ul>
       </div>
     </section>
+
   </div>
 
 </main>

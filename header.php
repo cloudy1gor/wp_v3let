@@ -62,30 +62,6 @@
               <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#menu"></use>
             </svg>
           </button>
-
-          <!-- <nav class="menu">
-            <ul class="menu__list">
-              <li class="menu__item"><svg class="menu__pic">
-                  <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#users"></use>
-                </svg> <a href="./index.html#slide" class="menu__link">Наш курс</a></li>
-              <li class="menu__item"><svg class="menu__pic">
-                  <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#history"></use>
-                </svg> <a href="./history.html" class="menu__link">Исторические хроники</a></li>
-              <li class="menu__item"><svg class="menu__pic">
-                  <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#art"></use>
-                </svg> <a href="./template-parts/content.php" class="menu__link">Творчество</a></li>
-              <li class="menu__item"><svg class="menu__pic">
-                  <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#author"></use>
-                </svg> <a href="./author.html" class="menu__link">Юрий Фёдоров</a></li>
-              <li class="menu__item"><svg class="menu__pic">
-                  <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#help"></use>
-                </svg> <a href="#" class="menu__link" data-modal="data-modal">Помощь</a></li>
-            </ul>
-            <button class="menu__btn"><span>Меню</span> <svg class="menu__icon">
-                <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#menu"></use>
-              </svg>
-            </button>
-          </nav> -->
         </div>
       </div>
     </header>
