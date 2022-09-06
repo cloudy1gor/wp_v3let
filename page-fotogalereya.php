@@ -3,26 +3,6 @@
 <main class="main">
   <div class="container">
 
-    <!-- <div class="bar" data-aos="zoom-out">
-      <dvi class="social">
-        <ul class="social__list">
-          <li class="social__item"><a href="https://ok.ru/profile/529378520930" target="_blank"
-              class="social__link"><svg class="social__icon">
-                <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#odnok"></use>
-              </svg></a></li>
-          <li class="social__item"><a href="https://telegram.me/v3letRu" target="_blank" class="social__link"><svg
-                class="social__icon">
-                <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#telegram"></use>
-              </svg></a></li>
-          <li class="social__item"><a href="mailto:admin@v3let.ru" class="social__link"><svg class="social__icon">
-                <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#email"></use>
-              </svg></a></li>
-        </ul>
-      </dvi>
-
-      <?php get_search_form(  ) ?>
-    </div> -->
-
     <section class="albums">
       <div class="container">
         <div class="albums__wrapper">
@@ -85,13 +65,14 @@
 
               <a href="<?php echo $category_link; ?>" class="news__link"></a>
             </li>
+
             <li class="albums__item">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/segodna.jpg" alt="image"
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/vstrechi.jpg" alt="image"
                 class="albums__img" />
-              <h3 class="albums__name">Мы сегодня</h3>
+              <h3 class="albums__name">Встречи</br>и юбилеи</h3>
               <?php
               // Получим ID категории
-              $category_id = get_cat_ID( 'Мы сегодня' );
+              $category_id = get_cat_ID( 'Встречи' );
 
               // Теперь, получим УРЛ категории
               $category_link = get_category_link( $category_id );
@@ -99,6 +80,7 @@
 
               <a href="<?php echo $category_link; ?>" class="news__link"></a>
             </li>
+
             <li class="albums__item">
               <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/vchera.jpg" alt="image"
                 class="albums__img" />
@@ -113,13 +95,14 @@
 
               <a href="<?php echo $category_link; ?>" class="news__link"></a>
             </li>
+
             <li class="albums__item">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/vstrechi.jpg" alt="image"
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/segodna.jpg" alt="image"
                 class="albums__img" />
-              <h3 class="albums__name">Встречи и юбилеи</h3>
+              <h3 class="albums__name">Мы сегодня</h3>
               <?php
               // Получим ID категории
-              $category_id = get_cat_ID( 'Встречи и юбилеи' );
+              $category_id = get_cat_ID( 'Мы сегодня' );
 
               // Теперь, получим УРЛ категории
               $category_link = get_category_link( $category_id );
@@ -127,6 +110,7 @@
 
               <a href="<?php echo $category_link; ?>" class="news__link"></a>
             </li>
+
             <li class="albums__item">
               <?php
                   // Получим ID категории
