@@ -59,7 +59,7 @@
 
               $args = array(
                 'posts_per_page'      => -1,
-                'category__not_in'    => [8,7],
+                'category__not_in'    => [8, 7, 5, 289, 286, 287, 288, 1],
                 // 'category_name' => 'tvorchestvo',
                 'author_name'=> 'Fedorov',
                 'order' => 'ASC',
