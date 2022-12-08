@@ -15,17 +15,17 @@
         <small>
           Просмотров: <?php echo get_post_meta( $post->ID, 'views', true ); ?>
         </small>
-        <small>
+        <!-- <small>
           <?php
-							the_tags();
+							// the_tags();
             ?>
-        </small>
+        </small> -->
         <small>
           <?php
 						echo vzlet_get_human_time();
 						?>
         </small>
-        <small>Категории:
+        <small>Категория:
           <?php
 						the_category( ', ' );
 						?>

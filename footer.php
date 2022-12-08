@@ -15,7 +15,7 @@
                 class="social__icon">
                 <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#telegram"></use>
               </svg></a></li>
-          <li class="social__item"><a href="mailto:admin@v3let.ru" class="social__link"><svg class="social__icon">
+          <li class="social__item"><a href="mailto:v3letz@gmail.com" class="social__link"><svg class="social__icon">
                 <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#email"></use>
               </svg></a></li>
         </ul>
@@ -36,7 +36,6 @@
         <span>Связь с администрацией:</span>
         <a href="mailto:v3letz@gmail.com" class="modal__mail">v3letz@gmail.com</a>
         <a href="mailto:v3let@mail.ru" class="modal__mail">v3let@mail.ru</a>
-        <a href="mailto:admin@v3let.ru" class="modal__mail">admin@v3let.ru</a>
       </address>
 
       <div class="modal__inner">
@@ -52,7 +51,7 @@
   <div class="container">
     <div class="footer__inner">
       <ol class="footer__txt">
-        <li class="footer__copy">Взлет® - лучший сайт об авиации.</li>
+        <li class="footer__copy">Взлет® - сайт выпускников 1974 года.</li>
         <li class="footer__copy">&copy Все права защищены 2007-<?php echo date("Y"); ?>г.</li>
       </ol>
       <dvi class="social">
@@ -65,7 +64,7 @@
                 class="social__icon">
                 <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#telegram"></use>
               </svg></a></li>
-          <li class="social__item"><a href="mailto:admin@v3let.ru" class="social__link"><svg class="social__icon">
+          <li class="social__item"><a href="mailto:v3letz@gmail.com" class="social__link"><svg class="social__icon">
                 <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#email"></use>
               </svg></a></li>
         </ul>

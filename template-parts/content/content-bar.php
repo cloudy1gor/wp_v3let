@@ -9,7 +9,7 @@
               class="social__icon">
               <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#telegram"></use>
             </svg></a></li>
-        <li class="social__item"><a href="mailto:admin@v3let.ru" class="social__link"><svg class="social__icon">
+        <li class="social__item"><a href="mailto:v3letz@gmail.com" class="social__link"><svg class="social__icon">
               <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#email"></use>
             </svg></a></li>
       </ul>
