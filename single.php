@@ -2,6 +2,7 @@
 
 <main class="main">
   <div class="container">
+<<<<<<< HEAD
     <div class="bar" data-aos="zoom-out">
       <dvi class="social">
         <ul class="social__list">
@@ -31,21 +32,24 @@
     </div>
 
     </div>
+=======
+    <?php get_template_part('template-parts/content/content-bar', get_post_format()) ?>
+>>>>>>> eb742eebf83f739898904d989a0d0411800b3861
   </div>
 
   <section class="product">
     <div class="container">
 
-      <?php while ( have_posts() ) : the_post(); ?>
+      <?php while (have_posts()) : the_post(); ?>
 
-      <?php get_template_part( 'template-parts/single', get_post_format() ) ?>
+        <?php get_template_part('template-parts/single', get_post_format()) ?>
 
       <?php endwhile; ?>
 
     </div>
   </section>
 
-  <?php get_template_part( 'template-parts/content/content-right-buttons', get_post_format() ) ?>
+  <?php get_template_part('template-parts/content/content-right-buttons', get_post_format()) ?>
 
 </main>
 
