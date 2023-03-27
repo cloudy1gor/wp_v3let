@@ -87,7 +87,7 @@ else
           // указываем категорию 5 и выключаем разбиение на страницы (пагинацию)
           $args = array(
             'posts_per_page'      => 6,
-            'category__not_in'    => [8, 5, 286, 289, 287, 288],
+            'category__not_in'    => [8, 5, 286, 289, 287, 288, 422],
             'post_status' => 'publish',
             'order' => 'ASC',
             'orderby' => 'date',

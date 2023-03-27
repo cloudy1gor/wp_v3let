@@ -82,6 +82,21 @@
             </li>
 
             <li class="albums__item">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/of-12.jpg" alt="image"
+                class="albums__img" />
+              <h3 class="albums__name">Фото автора</h3>
+              <?php
+              // Получим ID категории
+              $category_id = get_cat_ID( 'Фото автора' );
+
+              // Теперь, получим УРЛ категории
+              $category_link = get_category_link( $category_id );
+              ?>
+
+              <a href="<?php echo $category_link; ?>" class="news__link"></a>
+            </li>
+
+            <li class="albums__item">
               <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/vchera.jpg" alt="image"
                 class="albums__img" />
               <h3 class="albums__name">Мы вчера</h3>
