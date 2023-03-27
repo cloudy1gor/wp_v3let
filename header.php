@@ -9,6 +9,7 @@
   <meta name="keywords"
     content="ХВВАУЛ,Харьковское ВВАУЛ,Харьковское высшее военное авиационное училище лётчиков,выпускники 1974 года,выпуск 1974 года, лучший сайт авиации">
   <meta property="og:type" content="website">
+<<<<<<< HEAD
   <meta property="og:url" content="http://v3let.de">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="Взлёт">
@@ -18,6 +19,17 @@
     content="Сайт выпускников ХВВАУЛ 1974 года выпуска, ХВВАУЛ-74, Взлёт.ру, v3let.ru, лучший сайт авиации">
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="http://v3let.de">
+=======
+  <meta property="og:url" content="http://v3let">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Взлёт">
+  <meta property="og:title" content="Взлёт">
+  <meta property="og:image" content="http://192.168.0.109/assets/images/meta.jpg">
+  <meta property="og:description"
+    content="Сайт выпускников ХВВАУЛ 1974 года выпуска, ХВВАУЛ-74, Взлёт.ру, v3let.ru, лучший сайт авиации">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="http://localhost:3300">
+>>>>>>> 66304b85bf3387ba39bb275d4794a9c4f2134152
   <meta property="twitter:site" content="Взлёт">
   <meta property="twitter:title" content="Взлёт">
   <meta property="twitter:description"
@@ -95,7 +107,11 @@
     href="<?php echo get_template_directory_uri(); ?>/assets/images/common/favicons/apple-touch-icon-1024x1024.png"
     sizes="1024x1024">
   <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/assets/images/common/favicons/manifest.json">
+<<<<<<< HEAD
   <link rel="canonical" href="http://v3let.de">
+=======
+  <link rel="canonical" href="http://v3let">
+>>>>>>> 66304b85bf3387ba39bb275d4794a9c4f2134152
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 

@@ -68,7 +68,11 @@
 
               $args = array(
                 'posts_per_page'      => -1,
+<<<<<<< HEAD
                 'category__not_in'    => [8,7,289,286,287,288],
+=======
+                'category__not_in'    => [8, 7, 5, 289, 286, 287, 288, 1],
+>>>>>>> eb742eebf83f739898904d989a0d0411800b3861
                 // 'category_name' => 'tvorchestvo',
                 'author_name'=> 'Fedorov',
                 'order' => 'ASC',
