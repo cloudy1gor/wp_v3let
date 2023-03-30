@@ -67,7 +67,30 @@
             </li>
 
             <li class="albums__item">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/vstrechi.jpg" alt="image"
+              <?php
+                  // Получим ID категории
+                  $category_id = get_cat_ID( 'История ХВВАУЛ в фотографиях' );
+
+                  // Теперь, получим УРЛ категории
+                  $category_link = get_category_link( $category_id );
+                ?>
+
+              <!-- выведем ссылку на категорию -->
+              <a href="<?php echo $category_link; ?>" class="news__link btn"><span></span></a>
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/hist.webp" alt="image"
+                class="albums__img albums__img--nth" />
+              <h3 class="albums__name--overflow">История ХВВАУЛ в фотографиях</h3>
+              <?php
+              // Получим ID категории
+              $category_id = get_cat_ID( 'История ХВВАУЛ в фотографиях' );
+
+              // Теперь, получим УРЛ категории
+              $category_link = get_category_link( $category_id );
+              ?>
+            </li>
+
+            <li class="albums__item">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/vstrechi.webp" alt="image"
                 class="albums__img" />
               <h3 class="albums__name">Встречи</br>и юбилеи</h3>
               <?php
@@ -82,22 +105,7 @@
             </li>
 
             <li class="albums__item">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/of-12.jpg" alt="image"
-                class="albums__img" />
-              <h3 class="albums__name">Фото автора</h3>
-              <?php
-              // Получим ID категории
-              $category_id = get_cat_ID( 'Фото автора' );
-
-              // Теперь, получим УРЛ категории
-              $category_link = get_category_link( $category_id );
-              ?>
-
-              <a href="<?php echo $category_link; ?>" class="news__link"></a>
-            </li>
-
-            <li class="albums__item">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/vchera.jpg" alt="image"
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/vchera.webp" alt="image"
                 class="albums__img" />
               <h3 class="albums__name">Мы вчера</h3>
               <?php
@@ -112,7 +120,7 @@
             </li>
 
             <li class="albums__item">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/segodna.jpg" alt="image"
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/segodna.webp" alt="image"
                 class="albums__img" />
               <h3 class="albums__name">Мы сегодня</h3>
               <?php
@@ -127,26 +135,18 @@
             </li>
 
             <li class="albums__item">
-              <?php
-                  // Получим ID категории
-                  $category_id = get_cat_ID( 'История ХВВАУЛ в фотографиях' );
-
-                  // Теперь, получим УРЛ категории
-                  $category_link = get_category_link( $category_id );
-                ?>
-
-              <!-- выведем ссылку на категорию -->
-              <a href="<?php echo $category_link; ?>" class="news__link btn"><span></span></a>
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/hist.jpg" alt="image"
-                class="albums__img albums__img--nth" />
-              <h3 class="albums__name--overflow">История ХВВАУЛ в фотографиях</h3>
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gallery/of-12.webp" alt="image"
+                class="albums__img" />
+              <h3 class="albums__name">Фото автора</h3>
               <?php
               // Получим ID категории
-              $category_id = get_cat_ID( 'История ХВВАУЛ в фотографиях' );
+              $category_id = get_cat_ID( 'Фото автора' );
 
               // Теперь, получим УРЛ категории
               $category_link = get_category_link( $category_id );
               ?>
+
+              <a href="<?php echo $category_link; ?>" class="news__link"></a>
             </li>
           </ul>
         </div>

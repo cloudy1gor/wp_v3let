@@ -9,7 +9,7 @@
         <h2 class="author__title title">Об авторе</h2>
 
         <div class="author__top" data-aos="slide-up" data-aos-duration="1000">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/author.jpg" alt="Федоров Юрий Игоревич"
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/author.webp" alt="Федоров Юрий Игоревич"
             class="author__img" />
 
           <div class="author__body">
@@ -68,11 +68,7 @@
 
               $args = array(
                 'posts_per_page'      => -1,
-<<<<<<< HEAD
                 'category__not_in'    => [8,7,289,286,287,288],
-=======
-                'category__not_in'    => [8, 7, 5, 289, 286, 287, 288, 1],
->>>>>>> eb742eebf83f739898904d989a0d0411800b3861
                 // 'category_name' => 'tvorchestvo',
                 'author_name'=> 'Fedorov',
                 'order' => 'ASC',
