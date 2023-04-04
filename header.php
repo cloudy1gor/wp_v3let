@@ -135,9 +135,10 @@
             )
           )
             ?>
-          <button class="menu__btn"><span>Меню</span> <svg class="menu__icon">
+          <button class="menu__btn" aria-expanded="false"><span></span>
+            <!-- <svg class="menu__icon">
               <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#menu"></use>
-            </svg>
+            </svg> -->
           </button>
         </div>
       </div>

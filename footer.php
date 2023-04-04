@@ -51,7 +51,7 @@
   <div class="container">
     <div class="footer__inner">
       <ol class="footer__txt">
-        <li class="footer__copy">Взлет® - сайт выпускников 1974 года.</li>
+        <li class="footer__copy">Взлёт® - сайт выпускников 1974 года.</li>
         <li class="footer__copy">&copy Все права защищены 2007-<?php echo date("Y"); ?>г.</li>
       </ol>
       <dvi class="social">
