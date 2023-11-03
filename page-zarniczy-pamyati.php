@@ -29,6 +29,15 @@
                 <span>Профиль в Оноклассниках</span>
               </a>
             </div>
+
+            <div class="author__social">
+                  <a href="https://proza.ru/avtor/v3let" target="_blank" class="author__social-link">
+                    <div class="social__icon social__icon--second">
+                      П
+                    </div>
+                    <span>Профиль на Проза.ру</span>
+                  </a>
+                </div>
           </div>
         </div>
 
@@ -59,7 +68,7 @@
 
               $args = array(
                 'posts_per_page'      => -1,
-                'category__not_in'    => [8, 7, 5, 289, 286, 287, 288, 1],
+                'category__not_in'    => [8,7,289,286,287,288],
                 // 'category_name' => 'tvorchestvo',
                 'author_name'=> 'Fedorov',
                 'order' => 'ASC',

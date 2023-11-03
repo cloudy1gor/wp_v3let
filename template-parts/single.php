@@ -25,7 +25,7 @@
 						echo vzlet_get_human_time();
 						?>
         </small>
-        <small>Категории:
+        <small>Категория:
           <?php
 						the_category( ', ' );
 						?>
